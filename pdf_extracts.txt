@@ -1,0 +1,374 @@
+=== guidelines\BWC_at_Fifty.pdf ===
+The Biological Weapons
+Convention at Fifty
+Codifying 100 years of efforts to
+combat biological warfare
+United Nations Office for Disarmament Affairs, 2025
+The Biological Weapons
+Convention at Fifty
+Codifying 100 years of efforts to
+combat biological warfare
+Copyright © 2025 United Nations
+All rights reserved
+Disclaimer: This publication was produced by the United Nations Office for
+Disarmament Affairs (UNODA), with the financial support of the European
+Union. Its contents are the sole responsibility of UNODA and do not necessar-
+ily reflect the views of the European Union; nor do they necessarily reflect the
+official positions of the United Nations, or the views of the States Parties to the
+BWC or of any of the authors who contributed to the publication.
+For more information, please contact the BWC Implementation Support Unit,
+United Nations Office for Disarmament Affairs, at bwc@un.org.
+Cover photo credit: BWC Implementation Support Unit/UNOG
+Cover and publication design update by Salima Kram
+CONTENTS
+Foreword ...............................................................................7
+Ms. Izumi Nakamitsu, United Nations Under-Secretary-General and High
+Representative for Disarmament Affairs
+1. Past ....................................................................................9
+How did the 1925 Geneva Protocol prepare the foundation for the
+Biological Weapons Convention? ..................................................9
+Dr. Fiona Simpson, Deputy Chief, Weapons of Mass Destruction Branch,
+United Nations Office for Disarmament Affairs
+How did the BWC evolve over the last five decades and establish itself
+as a key pillar in multilateral disarmament? ................................... 12
+Dr. Lise H. Andersen, Post-Doctoral Researcher, Leiden University and
+Professor Brian Balmer, University College London
+How has the Implementation Support Unit strengthened the BWC since
+its establishment in 2006? ..........................................................17
+Mr. Daniel Feakes, Chief, Biological Weapons Convention Implementation
+Support Unit, United Nations Office for Disarmament Affairs
+How will the Ninth Review Conference be remembered and what impact
+has it had on future meetings under the BWC? ............................. 21
+Ambassador Leonardo Bencini, Permanent Representative of Italy to the
+Conference on Disarmament, President of the Ninth BWC Review Conference
+2. Present.............................................................................23
+How can the current discussions in the Working Group support States
+Parties in strengthening the BWC? ..............................................23
+Ambassador Frederico S. Duque Estrada Meyer, Permanent Representative
+of Brazil to the Conference on Disarmament, Chairperson of the Working
+Group on the Strengthening of the Biological Weapons Convention
+How can the BWC respond to the rapid advancements in science and
+technology? .............................................................................27
+Dr. Filippa Lentzos, Reader (Associate Professor) in Science & International
+Security, King’s College London and NGO Coordinator for the Biological
+Weapons Convention
+What lessons have been learned to strengthen the national
+implementation of the Convention? .............................................30
+Dr. Janes Mokgadi, Chemical, Biological, Nuclear, and Radiological (CBNR)
+Weapons Management Authority of Botswana, Ministry of Defense Security
+3. Future ..............................................................................33
+How can the next generation of scientists support efforts to reaffirm
+the shared determination to exclude completely the possibility to use
+biological agents and toxins as weapons? ....................................33
+Dr. Judith Chukwuebinim Okolo, Assistant Chief Research Officer, National
+Biotechnology Development Agency, and Youth for Biosecurity Fellow,
+Nigeria
+Is a path opening for discussions on a verification system and the further
+institutionalization of the Convention? ..........................................36
+Dr. James Revill, Head of Programme, Space Security, Weapons of Mass
+Destruction and Ms. Maria Garzón Maceda, Project Coordinator, United
+Nations Institute for Disarmament Research (UNIDIR)
+How can education and awareness-raising enhance trust or compliance
+with the BWC? .........................................................................40
+Dr. Leifan Wang, Mr. Jie Song, and Professor Weiwen Zhang, Tianjin
+University Center for Biosafety Research and Strategy, China
+FOREWORD
+Ms. Izumi Nakamitsu, United Nations Under-Secretary-General and High
+Representative for Disarmament Affairs
+In 1975, the Biological Weapons Convention, the first multilateral disarmament
+treaty to ban an entire category of weapons of mass destruction, entered into
+force. Since its inception the Convention has been a key component of the
+global disarmament regime, codifying a strong and longstanding norm that the
+use
+
+=== guidelines\cartagena-protocol-en.pdf ===
+Proto/ang 11/13/2000 3:39 PM Page 181
+CARTAGENA
+PROTOCOL
+ON
+BIOSAFETY
+TO THE
+CONVENTION
+ON
+BIOLOGICAL
+DIVERSITY
+TEXT AND ANNEXES
+Proto/ang 11/13/2000 3:39 PM Page 182
+Cartagena Protocol on Biosafety
+CARTAGENA
+PROTOCOL
+ON
+BIOSAFETY
+TO THE
+CONVENTION
+ON
+BIOLOGICAL
+DIVERSITY
+TEXT AND ANNEXES
+Montreal, 2000
+Proto/ang 11/13/2000 3:39 PM Page 184
+Cartagena Protocol on Biosafety Cartagena Protocol on Biosafety
+Introduction
+The Convention on Biological Diversity was finalized in Nairobi in May 1992
+and opened for signature at the United Nations Conference on Environment and
+Development (UNCED) in Rio de Janeiro on 5 June1992. It entered into force
+on 29 December 1993. Today,the Convention is the main international instrument
+for addressing biodiversity issues. It provides a comprehensive and holistic
+approach to the conservation of biological diversity,the sustainable use of natural
+resources and the fair and equitable sharing of benefits deriving from the use of
+genetic resources.
+Montreal,2000
+Biosafety is one of the issues addressed by the Convention. This concept refers to
+Copyright © 2000,Secretariat of the Convention on Biological Diversity
+the need to protect human health and the environment from the possible adverse
+ISBN:92-807-1924-6
+effects of the products of modern biotechnology. At the same time,modern
+biotechnology is recognized as having a great potential for the promotion of
+This publication may be reproduced for educational or non-profit purposes without
+human well-being,particularly in meeting critical needs for food,agriculture and
+special permission from the copyright holders,provided acknowledgement of the
+health care. The Convention clearly recognizes these twin aspects of modern
+source is made. The Secretariat of the Convention would appreciate receiving a
+biotechnology. On the one hand,it provides for the access to and transfer of
+copy of any publications that uses this publication as a source.
+technologies,including biotechnology,that are relevant to the conservation and
+sustainable use of biological diversity (for example,in Article 16,paragragh 1,
+For bibliographic and reference purpose this publication should be referred to as:
+and Article 19,paragraphs 1 and 2). On the other hand,Articles 8(g) and 19,
+paragraph 3,seek to ensure the development of appropriate procedures to enhance
+Secretariat of the Convention on Biological Diversity (2000). Cartagena Protocol on
+the safety of biotechnology in the context of the Convention’s overall goal of
+Biosafety to the Convention on Biological Diversity:text and annexes. Montreal:
+reducing all potential threats to biological diversity,taking also into account the
+Secretariat of the Convention on Biological Diversity.
+risks to human health. Article 8(g) deals with measures that Parties should take at
+national level,while Article 19,paragraph 3,sets the stage for the development of
+This booklet contains the text of the Cartagena Protocol on Biosafety to the an international legally binding instrument to address the issue of biosafety.
+Convention on Biological Diversity,which starts on page 2.
+At its second meeting,held in November 1995,the Conference of the Parties to the
+Convention established an Open-ended Ad Hoc Working Group on Biosafety to
+Published by the Secretariat of the Convention on Biological Diversity
+develop a draft protocol on biosafety,focusing specifically on transboundary
+movement of any living modified organism resulting from modern biotechnology
+For further information,please contact:
+that may have adverse effect on the conservation and sustainable use of biological
+The Secretariat of the Convention on Biological Diversity diversity. After several years of negotiations,the Protocol,known as the Cartagena
+World Trade Centre Protocol on Biosafety to the Convention on Biological Diversity,was finalized and
+393 St. Jacques,Suite 300 adopted in Montreal on 29 January 2000 at an extraordinary meeting of the
+Montreal,Quebec,H2Y 1N9 Conference of the Parties.
+Canada
+The conclusion of the Biosafety Protocol has been hailed as a significant step
+Phone : 1 (514) 288 2220
+forward in that it provides an international regulatory framework to reconcile the
+Fax: 1 (514) 288 6588
+respective needs of trade and environmental protection with respect to a rapidly
+e-mail: secretariat@biodiv.org
+growing global industry,the biotechnology industry. The Protocol thus creates
+Website: http://www.biodiv.org an enabling environment for the environmentally sound application of
+biotechnology,making it possible to derive maximum benefit from the potential
+that biotechnology has to offer,while minimizing the possible risks to the
+Printed on recycled paper environment and to human health.
+1
+Proto/ang 11/13/2000 3:39 PM Page 2
+Cartagena Protocol on Biosafety Cartagena Protocol on Biosafety
+CARTAGENA PROTOCOL ON BIOSAFETY TO THE Article
+CONVENTION ON BIOLOGICAL DIVERSITY 1
+OBJECTIVE
+The Parties to this Protocol,
+BeingParties to the Convention on Biological Diversity,h
+
+=== guidelines\DoH-Oct2008.pdf ===
+THE WORLD MEDICAL ASSOCIATION, INC.
+DECLARATION OF HELSINKI
+Ethical Principles for Medical Research Involving Human Subjects
+Adopted by the 18th WMA General Assembly, Helsinki, Finland, June 1964, and amended by the:
+29th WMA General Assembly, Tokyo, Japan, October 1975
+35th WMA General Assembly, Venice, Italy, October 1983
+41st WMA General Assembly, Hong Kong, September 1989
+48th WMA General Assembly, Somerset West, Republic of South Africa, October 1996
+52nd WMA General Assembly, Edinburgh, Scotland, October 2000
+53th WMA General Assembly, Washington, United States, October 2002
+(Note of Clarification on paragraph 29 added)
+55th WMA General Assembly, Tokyo, Japan, October 2004
+(Note of Clarification on Paragraph 30 added)
+WMA General Assembly, Seoul, Korea, October 2008
+A. INTRODUCTION
+1. The World Medical Association (WMA) has developed the Declaration of Helsinki as a
+statement of ethical principles for medical research involving human subjects, including
+research on identifiable human material and data.
+The Declaration is intended to be read as a whole and each of its constituent paragraphs
+should not be applied without consideration of all other relevant paragraphs.
+2. Although the Declaration is addressed primarily to physicians, the WMA encourages
+other participants in medical research involving human subjects to adopt these
+principles.
+3. It is the duty of the physician to promote and safeguard the health of patients, including
+those who are involved in medical research. The physician's knowledge and conscience
+are dedicated to the fulfilment of this duty.
+4. The Declaration of Geneva of the WMA binds the physician with the words, “The
+health of my patient will be my first consideration,” and the International Code of
+Medical Ethics declares that, “A physician shall act in the patient's best interest when
+providing medical care.”
+5. Medical progress is based on research that ultimately must include studies involving
+human subjects. Populations that are underrepresented in medical research should be
+provided appropriate access to participation in research.
+6. In medical research involving human subjects, the well-being of the individual research
+subject must take precedence over all other interests.
+7. The primary purpose of medical research involving human subjects is to understand the
+causes, development and effects of diseases and improve preventive, diagnostic and
+therapeutic interventions (methods, procedures and treatments). Even the best current
+1
+DoH/Oct2008
+interventions must be evaluated continually through research for their safety,
+effectiveness, efficiency, accessibility and quality.
+8. In medical practice and in medical research, most interventions involve risks and
+burdens.
+9. Medical research is subject to ethical standards that promote respect for all human
+subjects and protect their health and rights. Some research populations are particularly
+vulnerable and need special protection. These include those who cannot give or refuse
+consent for themselves and those who may be vulnerable to coercion or undue
+influence.
+10. Physicians should consider the ethical, legal and regulatory norms and standards for
+research involving human subjects in their own countries as well as applicable
+international norms and standards. No national or international ethical, legal or
+regulatory requirement should reduce or eliminate any of the protections for research
+subjects set forth in this Declaration.
+B. PRINCIPLES FOR ALL MEDICAL RESEARCH
+11. It is the duty of physicians who participate in medical research to protect the life, health,
+dignity, integrity, right to self-determination, privacy, and confidentiality of personal
+information of research subjects.
+12. Medical research involving human subjects must conform to generally accepted
+scientific principles, be based on a thorough knowledge of the scientific literature, other
+relevant sources of information, and adequate laboratory and, as appropriate, animal
+experimentation. The welfare of animals used for research must be respected.
+13. Appropriate caution must be exercised in the conduct of medical research that may
+harm the environment.
+14. The design and performance of each research study involving human subjects must be
+clearly described in a research protocol. The protocol should contain a statement of the
+ethical considerations involved and should indicate how the principles in this
+Declaration have been addressed. The protocol should include information regarding
+funding, sponsors, institutional affiliations, other potential conflicts of interest,
+incentives for subjects and provisions for treating and/or compensating subjects who are
+harmed as a consequence of participation in the research study. The protocol should
+describe arrangements for post-study access by study subjects to interventions identified
+as beneficial in the study or access to other appropriate care or benefits.
+15. The research protocol must be submitted for consideration,
+
+=== guidelines\durc-companion-guide.pdf ===
+Tools for the Identification, Assessment,
+Management, and Responsible Communication of
+Dual Use Research of Concern
+A Companion Guide
+to the United States Government Policies for
+Oversight of Life Sciences Dual Use Research of Concern
+Prepared by the National Institutes of Health
+on behalf of the United States Government
+SEPTEMBER 2014
+Table of Contents | i
+Table of Contents
+List of Terms & Abbreviations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .iii
+Introduction to the Companion Guide  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+The Process for DURC Oversight  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+A. Qs & As on the U .S . Government Policies for Oversight of Life Sciences Dual Use
+Research of Concern  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+B. Identification and Assessment of Research That Requires Institutional Review:
+Guidance for Principal Investigators and Institutions  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+1. Policy Requirements for the Identification and Assessment by PIs of Research That
+Requires Institutional Review......................................................................15
+2. Identification and Assessment by PIs of Research That Requires Institutional Review.............16
+A. Research Involving the Listed Agents ...................................................16
+B. Research Involving a Listed Agent That Also Produces, Aims to Produce, or Can Be
+Reasonably Anticipated to Produce One or More of the Listed Experimental Effects........17
+C. Research That the PI Thinks May Meet the Definition of DURC ............................17
+C. Framework for Institutional Review: Guidance for Institutions and
+Institutional Review Entities  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1. Policy Requirements for Institutional Review of Life Sciences Research for DURC Potential........21
+Requirements for Institutional Review Entities ..............................................22
+Requirements for the IRE Review Process...................................................22
+2. Framework for IRE Review of Research ......................................................... 23
+Step 1: Verify that the research directly involves nonattenuated forms of one or
+more of the listed agents...........................................................25
+Step 2: Assess whether the research produces, aims to produce, or can be reasonably
+anticipated to produce one or more of the seven listed experimental effects.........25
+Step 3: Assess the risks of dual use and determine whether the research is DURC. ...........26
+Step 4: Assess the potential benefits of the DURC...........................................29
+Step 5: Weigh the risks and benefits of the DURC...........................................30
+Step 6: Develop a draft risk mitigation plan for conducting the DURC and
+communicating its findings. .......................................................31
+D. Developing a Draft Risk Mitigation Plan: Guidance for Institutional Review Entities  . . . . . . . . . . . . 33
+1. Policy Requirements for Development of a Draft Risk Mitigation Plan............................35
+2. Developing a Draft Risk Mitigation Plan ........................................................ 36
+Strategies for Mitigating DURC-Associated Risks ..............................................36
+ii | Table of Contents
+3. Elements of a Draft Risk Mitigation Plan........................................................39
+E. Review of Risk Mitigation Plans: Guidance for Institutional Review Entities  . . . . . . . . . . . . . . . . . . . . 41
+1. Policy Requirements for Institutional Review of Risk Mitigation Plans ............................43
+2. Framework for IRE Review of Risk Mitigation Plans..............................................44
+Step 1: Review the research to verify that it still directly involves nonattenuated
+forms of one or more of the listed agents. ..........................................44
+Step 2: Assess whether the research still produces, aims to produce, or can be
+reasonably anticipated to produce one or more of the listed experimental effects.....45
+Step 3: Determine whether the research still meets the definition of DURC. .................46
+Step 4: Review and, as necessary, revise the risk mitigation plan.............................46
+F. Guidance for Responsible Communication of DURC Findings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .47
+1. Points to Consider in Assessing the Risks and Benefits of Communicating
+
+=== guidelines\WHO_AI_Ethics.pdf ===
+ETHICS AND GOVERNANCE OF ARTIFICIAL INTELLIGENCE FOR HEALTH
+ETHICS AND GOVERNANCE
+OF ARTIFICIAL INTELLIGENCE
+FOR HEALTH
+WHO GUIDANCE
+1
+ETHICS AND GOVERNANCE OF ARTIFICIAL INTELLIGENCE FOR HEALTH
+Ethics and governance of artificial intelligence for health: WHO guidance
+ISBN 978-92-4-002920-0 (electronic version)
+ISBN 978-92-4-002921-7 (print version)
+© World Health Organization 2021
+Some rights reserved. This work is available under the Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO;
+https://creativecommons.org/licenses/by-nc-sa/3.0/igo).
+Under the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes,
+provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion
+that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted.
+If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence.
+If you create a translation of this work, you should add the following disclaimer along with the suggested citation:
+“This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content
+or accuracy of this translation. The original English edition shall be the binding and authentic edition”.
+Any mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation
+rules of the World Intellectual Property Organization
+(http://www.wipo.int/amc/en/mediation/rules/).
+Suggested citation. Ethics and governance of artificial intelligence for health: WHO guidance.
+Geneva: World Health Organization; 2021. Licence: CC BY-NC-SA 3.0 IGO.
+Cataloguing-in-Publication (CIP) data. CIP data are available at http://apps.who.int/iris.
+Sales, rights and licensing. To purchase WHO publications, see http://apps.who.int/bookorders. To submit
+requests for commercial use and queries on rights and licensing, see http://www.who.int/about/licensing.
+Third-party materials. If you wish to reuse material from this work that is attributed to a third party, such as
+tables, figures or images, it is your responsibility to determine whether permission is needed for that reuse and
+to obtain permission from the copyright holder. The risk of claims resulting from infringement of any third-party-
+owned component in the work rests solely with the user.
+General disclaimers. The designations employed and the presentation of the material in this publication do not
+imply the expression of any opinion whatsoever on the part of WHO concerning the legal status of any country,
+territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. Dotted and
+dashed lines on maps represent approximate border lines for which there may not yet be full agreement.
+The mention of specific companies or of certain manufacturers’ products does not imply that they are endorsed or
+recommended by WHO in preference to others of a similar nature that are not mentioned. Errors and omissions
+excepted, the names of proprietary products are distinguished by initial capital letters.
+All reasonable precautions have been taken by WHO to verify the information contained in this publication.
+However, the published material is being distributed without warranty of any kind, either expressed or implied.
+The responsibility for the interpretation and use of the material lies with the reader. In no event shall WHO be
+liable for damages arising from its use.
+Graphic design: The New Division
+2
+ETHICS AND GOVERNANCE OF ARTIFICIAL INTELLIGENCE FOR HEALTH
+CONTENTS
+Foreword..................................................................................................................................................... v
+Acknowledgements................................................................................................................................ vii
+Abbreviations and acronyms............................................................................................................... x
+Executive summary................................................................................................................................. xi
+1. Introduction.......................................................................................................................................... 1
+2. Artificial intelligence.......................................................................................................................... 4
+3. Applications of artificial intelligence for health...................................................................... 6
+3.1 In health care................................................................................................................ 6
+3.2 In health research and drug development............................................................. 11
+3.3 In health systems management and planning.
+
