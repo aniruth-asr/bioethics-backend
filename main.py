@@ -3,6 +3,8 @@ load_dotenv()
 
 import logging
 import time
+import os
+import threading
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
@@ -21,54 +23,58 @@ logger = logging.getLogger("bioethics_radar")
 _model_ready = False
 _startup_time = None
 
+
+# 🔥 BACKGROUND MODEL LOAD (NON-BLOCKING)
+def background_warmup():
+    global _model_ready
+    try:
+        logger.info("Background model warmup started...")
+        from engine.pipeline import warmup_model
+        _model_ready = warmup_model()
+        logger.info("Model warmup completed.")
+    except Exception as e:
+        logger.error(f"Warmup failed: {e}")
+        _model_ready = False
+
+
 # ---------------- LIFESPAN ----------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _model_ready, _startup_time
+    global _startup_time
     _startup_time = time.time()
 
-    logger.info(" Starting BioEthics Radar...")
+    logger.info("Starting BioEthics Radar (non-blocking)...")
 
-    try:
-        from engine.pipeline import warmup_model
-
-        # SAFE MODEL LOAD
-        _model_ready = warmup_model()
-
-        logger.info(" Model READY")
-
-    except Exception as e:
-        logger.error(f" Warmup failed: {e}")
-
-        # DO NOT CRASH SERVER
-        _model_ready = False
+    # 🚀 Run warmup in background (CRITICAL FIX)
+    threading.Thread(target=background_warmup).start()
 
     yield
 
-    logger.info(" Shutting down...")
 
 # ---------------- APP ----------------
 app = FastAPI(lifespan=lifespan)
 
-# ---------------- CORS ----------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  #  tighten in production
+    allow_origins=["*"],  # ⚠️ tighten in production
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
 # ---------------- VALIDATION ----------------
 def validate_file(file_bytes, filename):
     if not filename.lower().endswith(".pdf"):
-        raise HTTPException(status_code=400, detail="Only PDF allowed")
+        raise HTTPException(400, "Only PDF allowed")
 
     if len(file_bytes) > MAX_FILE_SIZE:
-        raise HTTPException(status_code=400, detail="File too large")
+        raise HTTPException(400, "File too large")
 
-# ---------------- MODELS ----------------
+
+# ---------------- REQUEST MODEL ----------------
 class TextAuditRequest(BaseModel):
     text: str = Field(..., min_length=20, max_length=MAX_TEXT_SIZE)
+
 
 # ---------------- ROUTES ----------------
 @app.get("/health")
@@ -76,27 +82,25 @@ async def health():
     return {
         "status": "ok",
         "model_ready": _model_ready,
-        "uptime": round(time.time() - _startup_time, 1) if _startup_time else 0
+        "uptime": round(time.time() - _startup_time, 1)
     }
+
 
 @app.post("/api/audit")
 async def audit_text(body: TextAuditRequest):
     try:
         from engine.pipeline import run_full_pipeline
-
         result = run_full_pipeline(body.text)
-
-        logger.info(f"API RESPONSE: {result}")
+        print("API RESPONSE:", result)
         return result
-
     except Exception as e:
-        logger.error(f"TEXT ERROR: {e}")
-
+        print("TEXT ERROR:", e)
         return {
             "total_score": 0,
             "status": "ERROR",
             "results": []
         }
+
 
 @app.post("/api/audit/file")
 async def audit_file(file: UploadFile = File(...)):
@@ -104,25 +108,24 @@ async def audit_file(file: UploadFile = File(...)):
         from engine.pipeline import run_pipeline_on_file
 
         file_bytes = await file.read()
-
-        # VALIDATION ADDED (you missed calling it)
         validate_file(file_bytes, file.filename)
 
         result = run_pipeline_on_file(file_bytes, file.filename)
-
-        logger.info(f"API RESPONSE: {result}")
+        print("API RESPONSE:", result)
         return result
 
     except Exception as e:
-        logger.error(f"FILE ERROR: {e}")
-
+        print("FILE ERROR:", e)
         return {
             "total_score": 0,
             "status": "ERROR",
             "results": []
         }
 
-# ---------------- LOCAL RUN ----------------
+
+# ---------------- ENTRYPOINT ----------------
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+
+    port = int(os.environ.get("PORT", 10000))  
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
