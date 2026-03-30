@@ -26,29 +26,27 @@ _startup_time = None
 
 
 # ---------------- LIFESPAN ----------------
+from threading import Thread
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global _model_ready, _startup_time
     _startup_time = time.time()
 
-    logger.info(" Starting BioEthics Radar...")
+    logger.info("🚀 Starting BioEthics Radar (non-blocking)...")
 
-    try:
-        from engine.pipeline import warmup_model
+    def background_warmup():
+        global _model_ready
+        try:
+            from engine.pipeline import warmup_model
+            success = warmup_model()
+            _model_ready = success
+            logger.info(f"Warmup complete: {success}")
+        except Exception as e:
+            logger.error(f"Warmup failed: {e}")
+            _model_ready = False
 
-        success = warmup_model()
-
-        if not success:
-            raise Exception("Warmup returned False")
-
-        logger.info(" Guidelines loaded successfully")
-        _model_ready = True
-
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        logger.error(f"Warmup failed: {e}")
-        _model_ready = False
+    Thread(target=background_warmup).start()
 
     yield
 
