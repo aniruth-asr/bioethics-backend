@@ -32,6 +32,14 @@ async def lifespan(app: FastAPI):
     _startup_time = time.time()
 
     logger.info("Starting BioEthics Radar (non-blocking)...")
+    
+    from engine.pipeline import warmup_model
+    success = warmup_model()
+    if success:
+        logger.info("Guidelines loaded successfully.")
+    else:
+        logger.error("Failed to load guidelines.")
+        
     _model_ready = True
     yield
 
