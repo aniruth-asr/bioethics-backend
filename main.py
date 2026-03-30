@@ -24,23 +24,15 @@ _model_ready = False
 _startup_time = None
 
 
-# 🔥 BACKGROUND MODEL LOAD (NON-BLOCKING)
-def background_warmup():
-    global _model_ready
-    logger.info("Skipping model loading (Render safe mode)")
-    _model_ready = True
 
 # ---------------- LIFESPAN ----------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _startup_time
+    global _model_ready , _startup_time
     _startup_time = time.time()
 
     logger.info("Starting BioEthics Radar (non-blocking)...")
-
-    # 🚀 Run warmup in background (CRITICAL FIX)
-    threading.Thread(target=background_warmup).start()
-
+    _model_ready = True
     yield
 
 
