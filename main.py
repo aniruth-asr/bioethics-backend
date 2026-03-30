@@ -43,6 +43,8 @@ async def lifespan(app: FastAPI):
             _model_ready = success
             logger.info(f"Warmup complete: {success}")
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             logger.error(f"Warmup failed: {e}")
             _model_ready = False
 

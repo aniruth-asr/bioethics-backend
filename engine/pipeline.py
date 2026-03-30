@@ -216,24 +216,27 @@ def warmup_model():
     try:
         encoder = get_encoder()
         
-        # Robust path resolution for Render deployment
-        base = Path(__file__).resolve().parent.parent
-        path = base / "guidelines"
-        
-        # Fallback to CWD if not found (Render/Docker sometimes alters execution root)
-        if not path.exists():
-            alt_path = Path.cwd() / "guidelines"
-            if alt_path.exists():
-                path = alt_path
-            elif (Path.cwd() / "backend" / "guidelines").exists():
-                path = Path.cwd() / "backend" / "guidelines"
+        base = Path(__file__).resolve()
 
-        print("ABS PATH:", path)
-        if not path.exists():
-            raise Exception(f"GUIDELINES PATH NOT FOUND: {path}")
+        possible_paths = [
+            base.parent.parent / "guidelines",
+            Path.cwd() / "guidelines",
+            Path.cwd() / "backend" / "guidelines"
+        ]
 
-        print("FILES:", list(path.glob("*")))
+        path = None
+        for p in possible_paths:
+            if p.exists():
+                path = p
+                break
 
+        if not path:
+            raise Exception("GUIDELINES DIRECTORY NOT FOUND")
+
+        print("USING PATH:", path)
+        print("FILES:", list(path.glob("*.pdf")))
+
+        _guideline_cache.clear()
         _guideline_cache.update(
             load_guideline_clauses(encoder, path)
         )
