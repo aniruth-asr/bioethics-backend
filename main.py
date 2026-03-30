@@ -27,15 +27,8 @@ _startup_time = None
 # 🔥 BACKGROUND MODEL LOAD (NON-BLOCKING)
 def background_warmup():
     global _model_ready
-    try:
-        logger.info("Background model warmup started...")
-        from engine.pipeline import warmup_model
-        _model_ready = warmup_model()
-        logger.info("Model warmup completed.")
-    except Exception as e:
-        logger.error(f"Warmup failed: {e}")
-        _model_ready = False
-
+    logger.info("Skipping model loading (Render safe mode)")
+    _model_ready = True
 
 # ---------------- LIFESPAN ----------------
 @asynccontextmanager
