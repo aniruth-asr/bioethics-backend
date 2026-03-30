@@ -205,10 +205,15 @@ def load_guideline_clauses(encoder, guidelines_dir: Path) -> Dict[str, List[Guid
     }
 
     for pdf_path in pdfs:
+        print("LOADING PDF:", pdf_path)
         page_units: List[Tuple[int, str]] = []
+        text_length = 0
         for page_num, page_text in _iter_pdf_pages(pdf_path):
+            text_length += len(page_text)
             for clause in _split_into_clauses(page_text):
                 page_units.append((page_num, clause))
+
+        print("TEXT LENGTH:", text_length)
 
         if not page_units:
             continue

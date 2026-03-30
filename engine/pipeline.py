@@ -229,10 +229,10 @@ def warmup_model():
                 path = Path.cwd() / "backend" / "guidelines"
 
         print("ABS PATH:", path)
-        if path.exists():
-            print("FILES:", list(path.glob("*")))
-        else:
-            print("FILES: []")
+        if not path.exists():
+            raise Exception(f"GUIDELINES PATH NOT FOUND: {path}")
+
+        print("FILES:", list(path.glob("*")))
 
         _guideline_cache.update(
             load_guideline_clauses(encoder, path)
@@ -241,9 +241,12 @@ def warmup_model():
         sizes = {k: len(v) for k, v in _guideline_cache.items()}
         print("CACHE:", sizes)
 
+        if all(v == 0 for v in sizes.values()):
+            raise Exception("GUIDELINES LOADED BUT EMPTY")
+
         return True
     except Exception as e:
         import traceback
         traceback.print_exc()
         print("Warmup failed:", str(e))
-        return False
+        raise e
