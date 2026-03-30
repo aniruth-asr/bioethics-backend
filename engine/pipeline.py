@@ -10,7 +10,8 @@ import pdfplumber
 from .critical_rules import apply_global_overrides
 from .guideline_engine import GuidelineClause, PILLARS, load_guideline_clauses
 from .section_parser import parse_sections
-from .llm_extractor import extract_with_llm
+# llm_extractor is imported lazily inside run_pipeline_on_file to avoid
+# crashing at module load time if GROQ_API_KEY is missing.
 
 logger = logging.getLogger(__name__)
 
@@ -202,11 +203,12 @@ def run_full_pipeline(text: str, llm_data: dict = None):
 def run_pipeline_on_file(file_bytes: bytes, filename: str):
     text = extract_text(file_bytes, filename)
 
+    llm_data = {}
     try:
+        from .llm_extractor import extract_with_llm
         llm_data = extract_with_llm(text)
     except Exception as e:
-        print("LLM failed:", e)
-        llm_data = {}
+        print("LLM failed (non-fatal):", e)
 
     return run_full_pipeline(text, llm_data)
 
@@ -215,26 +217,37 @@ def run_pipeline_on_file(file_bytes: bytes, filename: str):
 def warmup_model():
     try:
         encoder = get_encoder()
-        
+
         base = Path(__file__).resolve()
 
         possible_paths = [
-            base.parent.parent / "guidelines",
-            Path.cwd() / "guidelines",
-            Path.cwd() / "backend" / "guidelines"
+            base.parent.parent / "guidelines",           # engine/../.. = backend/../guidelines
+            base.parent / "guidelines",                  # engine/.. = backend/guidelines  ← most likely on Render
+            Path.cwd() / "guidelines",                   # cwd/guidelines
+            Path.cwd() / "backend" / "guidelines",       # cwd/backend/guidelines
+            Path("/opt/render/project/src/backend/guidelines"),  # Render absolute fallback
         ]
 
         path = None
         for p in possible_paths:
+            print(f"Checking path: {p} — exists: {p.exists()}")
             if p.exists():
                 path = p
                 break
 
         if not path:
-            raise Exception("GUIDELINES DIRECTORY NOT FOUND")
+            print("GUIDELINES DIRECTORY NOT FOUND — all paths tried:")
+            for p in possible_paths:
+                print(" ", p)
+            return False
 
         print("USING PATH:", path)
-        print("FILES:", list(path.glob("*.pdf")))
+        pdfs = list(path.glob("*.pdf"))
+        print("FILES:", pdfs)
+
+        if not pdfs:
+            print("ERROR: No PDF files found in guidelines directory")
+            return False
 
         _guideline_cache.clear()
         _guideline_cache.update(
@@ -245,11 +258,13 @@ def warmup_model():
         print("CACHE:", sizes)
 
         if all(v == 0 for v in sizes.values()):
-            raise Exception("GUIDELINES LOADED BUT EMPTY")
+            print("ERROR: GUIDELINES LOADED BUT ALL PILLARS EMPTY")
+            return False
 
+        print("Warmup SUCCESS — clauses loaded:", sum(sizes.values()))
         return True
     except Exception as e:
         import traceback
         traceback.print_exc()
-        print("Warmup failed:", str(e))
-        raise e
+        print("Warmup EXCEPTION:", str(e))
+        return False

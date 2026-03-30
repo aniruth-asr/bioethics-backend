@@ -33,7 +33,7 @@ async def lifespan(app: FastAPI):
     global _model_ready, _startup_time
     _startup_time = time.time()
 
-    logger.info("🚀 Starting BioEthics Radar (non-blocking)...")
+    logger.info("Starting BioEthics Radar (non-blocking)...")
 
     def background_warmup():
         global _model_ready
@@ -82,29 +82,34 @@ class TextAuditRequest(BaseModel):
 # ---------------- ROUTES ----------------
 @app.get("/health")
 async def health():
+    uptime = round(time.time() - _startup_time, 1) if _startup_time else 0
     return {
         "status": "ok",
         "model_ready": _model_ready,
-        "uptime": round(time.time() - _startup_time, 1)
+        "uptime": uptime
     }
 
 
 @app.post("/api/audit")
 async def audit_text(body: TextAuditRequest):
     try:
-        print("🚀 API HIT")
+        print("API HIT /api/audit")
         from engine.pipeline import run_full_pipeline
+        from engine.llm_extractor import extract_with_llm
 
-        print("⚙️ Running pipeline...")
-        result = run_full_pipeline(body.text)
+        llm_data = {}
+        try:
+            llm_data = extract_with_llm(body.text)
+        except Exception as llm_err:
+            print("LLM failed (non-fatal):", llm_err)
 
-        print("✅ PIPELINE RESULT:", result)
+        result = run_full_pipeline(body.text, llm_data)
+        print("PIPELINE RESULT total_score:", result.get("total_score"))
         return result
 
     except Exception as e:
         import traceback
-        traceback.print_exc()   # 🔥 THIS IS KEY
-
+        traceback.print_exc()
         return {
             "error": str(e),
             "total_score": 0,
@@ -122,10 +127,12 @@ async def audit_file(file: UploadFile = File(...)):
         validate_file(file_bytes, file.filename)
 
         result = run_pipeline_on_file(file_bytes, file.filename)
-        print("API RESPONSE:", result)
+        print("FILE AUDIT total_score:", result.get("total_score"))
         return result
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print("FILE ERROR:", e)
         return {
             "total_score": 0,
