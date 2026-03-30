@@ -90,6 +90,43 @@ async def health():
     }
 
 
+@app.get("/debug/paths")
+async def debug_paths():
+    """Diagnostic endpoint — shows path resolution and cache state."""
+    import os
+    from pathlib import Path
+    from engine.guideline_engine import PILLARS
+
+    base = Path(__file__).resolve()
+    candidates = [
+        base.parent / "guidelines",
+        base.parent.parent / "guidelines",
+        Path.cwd() / "guidelines",
+        Path.cwd() / "backend" / "guidelines",
+        Path("/opt/render/project/src/guidelines"),
+    ]
+
+    path_info = [
+        {"path": str(p), "exists": p.exists(),
+         "files": [f.name for f in p.glob("*.pdf")] if p.exists() else []}
+        for p in candidates
+    ]
+
+    try:
+        from engine.pipeline import _guideline_cache
+        cache_sizes = {k: len(v) for k, v in _guideline_cache.items()}
+    except Exception as e:
+        cache_sizes = {"error": str(e)}
+
+    return {
+        "cwd": str(Path.cwd()),
+        "script_location": str(base),
+        "model_ready": _model_ready,
+        "cache_sizes": cache_sizes,
+        "paths_checked": path_info,
+    }
+
+
 @app.post("/api/audit")
 async def audit_text(body: TextAuditRequest):
     try:
