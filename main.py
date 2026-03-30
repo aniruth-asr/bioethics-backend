@@ -28,19 +28,28 @@ _startup_time = None
 # ---------------- LIFESPAN ----------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _model_ready , _startup_time
+    global _model_ready, _startup_time
     _startup_time = time.time()
 
-    logger.info("Starting BioEthics Radar (non-blocking)...")
-    
-    from engine.pipeline import warmup_model
-    success = warmup_model()
-    if success:
-        logger.info("Guidelines loaded successfully.")
-    else:
-        logger.error("Failed to load guidelines.")
-        
-    _model_ready = True
+    logger.info(" Starting BioEthics Radar...")
+
+    try:
+        from engine.pipeline import warmup_model
+
+        success = warmup_model()
+
+        if not success:
+            raise Exception("Warmup returned False")
+
+        logger.info(" Guidelines loaded successfully")
+        _model_ready = True
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        logger.error(f"Warmup failed: {e}")
+        _model_ready = False
+
     yield
 
 
