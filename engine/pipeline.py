@@ -215,16 +215,35 @@ def run_pipeline_on_file(file_bytes: bytes, filename: str):
 def warmup_model():
     try:
         encoder = get_encoder()
+        
+        # Robust path resolution for Render deployment
         base = Path(__file__).resolve().parent.parent
-        print("Loading guidelines from:", base / "guidelines")
+        path = base / "guidelines"
+        
+        # Fallback to CWD if not found (Render/Docker sometimes alters execution root)
+        if not path.exists():
+            alt_path = Path.cwd() / "guidelines"
+            if alt_path.exists():
+                path = alt_path
+            elif (Path.cwd() / "backend" / "guidelines").exists():
+                path = Path.cwd() / "backend" / "guidelines"
+
+        print("ABS PATH:", path)
+        if path.exists():
+            print("FILES:", list(path.glob("*")))
+        else:
+            print("FILES: []")
 
         _guideline_cache.update(
-            load_guideline_clauses(encoder, base / "guidelines")
+            load_guideline_clauses(encoder, path)
         )
 
-        print("GUIDELINE CACHE:", {k: len(v) for k, v in _guideline_cache.items()})
+        sizes = {k: len(v) for k, v in _guideline_cache.items()}
+        print("CACHE:", sizes)
 
         return True
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print("Warmup failed:", str(e))
         return False
