@@ -74,13 +74,21 @@ async def health():
 @app.post("/api/audit")
 async def audit_text(body: TextAuditRequest):
     try:
+        print("🚀 API HIT")
         from engine.pipeline import run_full_pipeline
+
+        print("⚙️ Running pipeline...")
         result = run_full_pipeline(body.text)
-        print("API RESPONSE:", result)
+
+        print("✅ PIPELINE RESULT:", result)
         return result
+
     except Exception as e:
-        print("TEXT ERROR:", e)
+        import traceback
+        traceback.print_exc()   # 🔥 THIS IS KEY
+
         return {
+            "error": str(e),
             "total_score": 0,
             "status": "ERROR",
             "results": []

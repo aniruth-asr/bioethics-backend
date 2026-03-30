@@ -1,11 +1,24 @@
 from groq import Groq
 import os
 import json
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+# Load from backend/.env explicitly
+backend_dir = Path(__file__).parent.parent
+load_dotenv(backend_dir / ".env")
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# Lazy-load client to avoid init errors
+_client = None
+
+def get_client():
+    global _client
+    if _client is None:
+        key = os.getenv("GROQ_API_KEY")
+        if not key:
+            raise ValueError("GROQ_API_KEY not set")
+        _client = Groq(api_key=key)
+    return _client
 
 PROMPT = """You are an information extraction engine.
 
@@ -41,7 +54,7 @@ def safe_json_parse(content: str):
 
 # ---------------- GROQ CALL ----------------
 def call_groq(model, text):
-    return client.chat.completions.create(
+    return get_client().chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": PROMPT},
